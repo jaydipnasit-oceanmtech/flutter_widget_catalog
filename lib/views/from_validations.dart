@@ -31,30 +31,22 @@ class _FormValidationsState extends State<FormValidations> {
             SizedBox(
               height: 20,
             ),
-            AnimatedPhysicalModel(
-              shape: BoxShape.rectangle,
+            Common(
               color: Colors.white,
-              duration: Duration(seconds: 2),
-              elevation: 20,
-              curve: Curves.bounceIn,
-              shadowColor: Colors.white,
-              child: Common(
-                color: Colors.white,
-                valide: (value) {
-                  bool emailValid =
-                      RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value!);
-                  if (emailValid) {
-                    return null;
-                  } else {
-                    return "Please enter valide email";
-                  }
-                },
-                ontap: () {
-                  goble.currentState!.validate();
-                },
-                hint: "Email",
-                perfi: Icon(Icons.email),
-              ),
+              valide: (value) {
+                bool emailValid =
+                    RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value!);
+                if (emailValid) {
+                  return null;
+                } else {
+                  return "Please enter valide email";
+                }
+              },
+              ontap: () {
+                goble.currentState!.validate();
+              },
+              hint: "Email",
+              perfi: Icon(Icons.email),
             ),
             SizedBox(
               height: 20,
