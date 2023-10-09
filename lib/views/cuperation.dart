@@ -21,12 +21,12 @@ class _CupertionWidgetsState extends State<CupertionWidgets> {
   int o = 0;
   double _currentSliderValue = 0.0;
   bool swith = false;
-  TextEditingController _name = TextEditingController(text: "search");
+  final TextEditingController _name = TextEditingController(text: "search");
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
+        navigationBar: const CupertinoNavigationBar(
           backgroundColor: Colors.amber,
           middle: Text("CupertionNavigatorbar"),
         ),
@@ -45,33 +45,33 @@ class _CupertionWidgetsState extends State<CupertionWidgets> {
                               Navigator.pop(context);
                             },
                             isDefaultAction: true,
-                            child: Text("Defulactions")),
+                            child: const Text("Defulactions")),
                         CupertinoActionSheetAction(
                             onPressed: () {
                               Navigator.pop(context);
                             },
                             isDefaultAction: true,
-                            child: Text("Action")),
+                            child: const Text("Action")),
                         CupertinoActionSheetAction(
                             onPressed: () {
                               Navigator.pop(context);
                             },
                             isDefaultAction: true,
-                            child: Text("Action")),
+                            child: const Text("Action")),
                       ],
                     );
                   },
                 );
               },
-              child: Text("Button"),
               color: Colors.blue,
+              child: Text("Button"),
             ),
           ),
-          CupertinoActivityIndicator(
+          const CupertinoActivityIndicator(
             radius: 20,
             color: Colors.grey,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           CupertinoButton(

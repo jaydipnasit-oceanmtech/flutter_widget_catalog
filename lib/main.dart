@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/bloc/count_bloc.dart';
 import 'package:flutter_application_1/provider/provider_logic.dart';
-import 'package:flutter_application_1/provider/provider_view.dart';
+import 'package:flutter_application_1/views/bloc_home_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 //import 'package:flutter_application_1/views/Widget_Screens.dart';
 
@@ -25,10 +27,10 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme:
             ThemeData(brightness: Brightness.light, scaffoldBackgroundColor: Colors.white, primaryColor: Colors.amber),
-        // darkTheme:
-        //     ThemeData(brightness: Brightness.dark, scaffoldBackgroundColor: Colors.black, primaryColor: Colors.amber),
-
-        home: ProdviderScreen(),
+        home: BlocProvider(
+          create: (context) => CountBloc(),
+          child: const BlocHomeScreen(),
+        ),
       ),
     );
   }
